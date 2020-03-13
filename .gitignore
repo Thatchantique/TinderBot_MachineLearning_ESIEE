@@ -10,3 +10,5 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+ChromeDriver/*
+!ChromeDriver/chromedriver_win32/
