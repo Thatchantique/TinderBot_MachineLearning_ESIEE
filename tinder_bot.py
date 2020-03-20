@@ -10,12 +10,10 @@ class TinderBot():
     def login(self):
         self.driver.get('https://tinder.com')
         
-        sleep(5)
+        sleep(3)
 
         fb_button = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/span/div[2]/button')
         fb_button.click()
-
-        sleep(5)
 
         # save default window
         base_window = self.driver.window_handles[0]
@@ -30,11 +28,11 @@ class TinderBot():
         login = self.driver.find_element_by_xpath('//*[@id="u_0_0"]')
         login.click()
 
-        sleep(5)
+        sleep(3)
 
         self.driver.switch_to_window(base_window)
 
-        sleep(5)
+        sleep(3)
 
         emplacement = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
         emplacement.click()
@@ -72,5 +70,5 @@ class TinderBot():
 
 bot = TinderBot()
 bot.login()
-#sleep(10)
-#bot.auto()
+sleep(2)
+bot.auto()
