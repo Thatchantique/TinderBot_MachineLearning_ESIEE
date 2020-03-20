@@ -25,7 +25,6 @@ class TinderBot():
         email.send_keys(username)
 
         mdp = self.driver.find_element_by_xpath('//*[@id="pass"]')
-        # TODO : securiser
         mdp.send_keys(password)
 
         login = self.driver.find_element_by_xpath('//*[@id="u_0_0"]')
@@ -54,7 +53,13 @@ class TinderBot():
     def auto(self):
         while True:
             sleep(0.75)
-            self.like()
+            try:
+                self.like()
+            except Exception:
+                try:
+                    self.close_popup()
+                except Exception:
+                    self.close_match()
 
     def close_popup(self):
         accueil = bot.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div[2]/button[2]')
