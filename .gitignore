@@ -9,4 +9,8 @@
 [Ss]cripts
 pyvenv.cfg
 .venv
+debug.log
 pip-selfcheck.json
+chromedriver.exe
+__pycache__/
+secrets.py
